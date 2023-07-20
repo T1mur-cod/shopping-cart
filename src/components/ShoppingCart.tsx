@@ -1,5 +1,6 @@
 import { Offcanvas, Stack } from "react-bootstrap"
 import { useShoppingCart } from "../context/ShoppingCartContext"
+import { CartItem } from "./CartItem"
 
 type ShoppingCartProps = {
   isOpen: boolean
@@ -17,8 +18,8 @@ export default function ShoppingCart({ isOpen }: ShoppingCartProps) {
         </Offcanvas.Header>
         <Offcanvas.Body>
           <Stack gap={3}>
-            {cartItems.map(item => 
-              <CartItem key={item.id} {...item} />
+            {cartItems.map((item, index: number )=> 
+              <CartItem key={index} {...item} />
             )}
           </Stack>
         </Offcanvas.Body>
